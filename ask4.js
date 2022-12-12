@@ -73,6 +73,7 @@ const dinner = [foodDatabase[4], foodDatabase[3]]
 const allDay = [...breakfast, ...lunch, ...dinner] // διαβασε τι κανει το ...
 //console.log(...allDay) /// δες τι τυπωνει εδω
 //console.log(...breakfast)
+
 function totalofMacro(meal, macro) {
     let macroSum = 0;
     for (i = 0; i < meal.length; i++) {
@@ -80,7 +81,9 @@ function totalofMacro(meal, macro) {
     };
     return macroSum;
 };
-totalofMacro(allDay , ['calories']);
+const totalMacros = totalofMacro(allDay , ['calories']);
+console.log(totalMacros);
+
 
 
 function seeAnalytics(meal) {
