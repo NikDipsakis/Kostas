@@ -111,12 +111,3 @@ function callByName(foodList , searchName) {
     }
 }
 callByName(foodDatabase , 'egg');
-
-
-// φτιάξε μια συνάρτηση που θα πέρνει σαν είσοδο ενα απο τα απο πανω και θα επιστρέφει την διατροφική αξία του γεύματος
-// στην περιπτωση που μπει το allDay στην συναρτηση θελω να τσεκαρει αν ο χρηστης περασε τις θερμιδες στοχο η αν πηρε την καταλληλη προτεινη (const goal)
-
-/// tips
-
-//console.log(foodDatabase[0].name) ///  'egg'
-//console.log(foodDatabase[0].calories) ///  86

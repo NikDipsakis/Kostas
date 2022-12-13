@@ -1,0 +1,214 @@
+:root {
+    /*Light theme*/
+    --darkColor:  rgb(255, 255, 255);
+    --darkerColor:  rgb(212, 212, 212);
+    --darkestColor:  rgb(231, 231, 231);
+    --lightColor:  rgb(94, 94, 94);
+    --violetColor:  rgb(255, 185, 249);
+    --violetDarkColor: rgb(255, 36, 102);
+    --grayColor: rgb(156, 156, 156);
+    --deleteColor: rgb(255, 21, 91);
+}
+
+
+.darkmode {
+   /* Dark theme*/
+    --darkColor:  rgb(61, 61, 61);
+    --darkerColor:  rgb(39, 39, 39);
+    --darkestColor:  rgb(32, 32, 32);
+    --lightColor:  rgb(168, 168, 168);
+    --violetColor:  rgb(195, 149, 255);
+    --violetDarkColor: rgb(138, 75, 255);
+    --grayColor: rgb(109, 109, 109);
+    --deleteColor: rgb(127, 58, 255);
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Fira sans" , sans-serif ;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--darkColor);
+    color: rgb(255, 255, 255) ;
+    
+}
+
+header{
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    font-weight: 200;
+}
+header h1 {
+    font-size: 2.5rem;
+    color: var(--grayColor) ;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1{
+    font-weight: 200;
+}
+
+
+
+#dark-mode-toggle {
+    display: flex;
+    width: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 95vw;
+    cursor: pointer;
+}
+
+
+#new-meal-form {
+    display: flex;
+
+}
+
+input, button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#new-meal-input {
+   flex: 1 1 0%; 
+   background-color: var(--darkerColor);
+   padding: 1rem;
+   border-radius: 1rem;
+   margin-right: 1rem;
+   color: var(--lightColor);
+   font-size: 1.25rem;
+}
+
+#new-meal-input::placeholder {
+    color: var(--grayColor);
+}
+
+#new-meal-submit {
+    color: var(--violetColor);
+    font-size: 1.25rem;
+    font-weight: 775;
+    background-image: linear-gradient(to right, var(--violetColor),
+     var(--violetDarkColor));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0,4s;
+}
+
+#new-meal-submit:hover {
+    opacity: 0.8;
+    
+}
+
+#new-meal-submit:active {
+    opacity: 0,6;
+}
+
+main {
+    flex: 1 1 0%;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.task-list {
+    padding: 1rem;   
+}
+
+.meal-list h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--grayColor);
+    margin-bottom: 1rem;
+}
+
+#meals .meal {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkestColor);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+   
+}
+
+#meals .meal .content .text {
+    color:var(--lightColor);
+    font-size: 1.125rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+#meals .meal .content .text:not(:read-only) {
+    color: var(--violetDarkColor);
+}
+
+#meals .meal .actions {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+#meals .meal {
+    -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  }
+#meals .meal:hover {
+    -webkit-transition: var(--darkerColor);
+    box-shadow: 0 0 40px 40px var(--grayColor) inset;
+    padding: 1.125rem;
+    transition: 300ms;
+}
+
+
+
+#meal .actions button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0,4s;
+}
+
+.meal .actions button:hover {
+    opacity: 0.8;
+}
+
+.meal .actions button:active {
+    opacity: 0,6;
+}
+
+.meal .actions .edit {
+    font-size: medium;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--violetColor),
+     var(--violetDarkColor));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.meal .actions .delete {
+    font-size: medium;
+    font-weight: 700;
+    color:var(--deleteColor);
+}
+

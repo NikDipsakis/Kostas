@@ -1,12 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script src="ask4.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskMaster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/Styles/style.css" />
+  </head>
+  <body>
+    <img
+      id="dark-mode-toggle"
+      class="dark-mode-toggle"
+      src="assets/Images/moon.png"
+    />
+    <header>
+      <h1>TaskMaster</h1>
+      <form id="new-meal-form">
+        <input
+          type="text"
+          name="new-meal-input"
+          id="new-meal-input"
+          placeholder="BreakFast"
+        />
+        <input type="submit" onclick ="textFieldInput()" id="new-meal-submit" value="Add" />
+      </form>
+    </header>
+    <header>
+        <form id="new-meal-form">
+          <input
+            type="text"
+            name="new-meal-input"
+            id="new-meal-input"
+            placeholder="Lunch"
+          />
+          <input type="submit" id="new-meal-submit" value="Add" />
+        </form>
+      </header>
+      <header>
+        <form id="new-meal-form">
+          <input
+            type="text"
+            name="new-meal-input"
+            id="new-meal-input"
+            placeholder="Dinner"
+          />
+          <input type="submit" id="new-meal-submit" value="Add" />
+        </form>
+      </header>
+      <header>
+        <form id="new-meal-form">
+          <input
+            type="text"
+            name="new-meal-input"
+            id="new-meal-input"
+            placeholder="Snacks"
+          />
+          <input type="submit" id="new-meal-submit" value="Add" />
+        </form>
+      </header>
+    <main>
+      <section class="meal-list">
+        <h2>Meals</h2>
+
+        <div id="meals">
+          <!-- <div class="meal">
+					<div class="content">
+						<input 
+							type="text" 
+							class="text" 
+							value="A new meal"
+							readonly>
+					</div>
+					<div class="actions">
+						<button class="edit">Edit</button>
+						<button class="delete">Delete</button>
+					</div>
+				</div> -->
+        </div>
+      </section>
+    </main>
+    <script src="assets/Scripts/DarkMode.js"></script>
+    <script src="assets/Scripts/app.js"></script>
+  </body>
 </html>
