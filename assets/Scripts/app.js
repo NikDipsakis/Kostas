@@ -109,33 +109,42 @@ const lunchInput = document.getElementById("new-lunch-input");
 const dinnerInput = document.getElementById("new-dinner-input");
 const snacksInput = document.getElementById("new-snacks-input");
 
-
-function getValue(input , foods) {
+function getValue(input, foods) {
     const inputValue = input.value;
     const inputArray = inputValue.split(',');
+    let calorieSum = 0;
+    let proteinSum = 0;
+    let carbSum = 0;
+    let fatSum = 0;
     //console.log(inputValueArray);
     for (i = 0; i < foods.length; i++) {
         //console.log(foodDatabase[i].name);
         for (j = 0; j < inputArray.length; j++) {
             if (foods[i].name === inputArray[j]) {
-                console.log(`${foods[i].name} contains :\n${foodDatabase[i].calories} calories, \n${foodDatabase[i].protein} grams of Protein, \n${foodDatabase[i].carbs} grams of Carbs \nand ${foodDatabase[i].fat} grams of fat`)
+                calorieSum += foods[i].calories
+                proteinSum += foods[i].protein
+                carbSum += foods[i].carbs
+                fatSum += foods[i].fat
+                //console.log(`${foods[i].name} contains :\n${foods[i].calories} calories, \n${foods[i].protein} grams of Protein, \n${foods[i].carbs} grams of Carbs \nand ${foods[i].fat} grams of fat`)
             }
         }
     }
+    console.log(`Total of calories : ${calorieSum} \nTotal of Protein : ${proteinSum} \nTotal of Carbs : ${carbSum} \nTotal of Fat : ${fatSum}`)
 }
- 
+
 function getBreakfast() {
-    getValue(breakfastInput , foodDatabase);
+    getValue(breakfastInput, foodDatabase);
 };
 
 function getLunch() {
-    getValue(lunchInput , foodDatabase);
+    getValue(lunchInput, foodDatabase);
 }
 
 function getDinner() {
-    getValue(dinnerInput , foodDatabase);
+    getValue(dinnerInput, foodDatabase);
 }
 
-function getSnacks(){
-    getValue(snacksInput , foodDatabase);
+function getSnacks() {
+    getValue(snacksInput, foodDatabase);
 }
+

@@ -9,6 +9,9 @@
     --grayColor: rgb(156, 156, 156);
     --deleteColor: rgb(255, 21, 91);
 }
+.div {
+    display: flex;
+}
 
 
 .darkmode {
@@ -73,7 +76,6 @@ header h1{
 
 #new-meal-form {
     display: flex;
-
 }
 
 input, button {
@@ -125,9 +127,14 @@ main {
     width: 100%;
     margin: 0 auto;
 }
+.meal {
+    width: 50;
+}
 
-.task-list {
-    padding: 1rem;   
+.meal-list {
+    padding: 1rem;  
+   
+    
 }
 
 .meal-list h2 {
@@ -140,17 +147,17 @@ main {
     margin-bottom: 1rem;
 }
 
-#meals .meal {
+.meals .meal {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--darkestColor);
     padding: 1rem;
     border-radius: 1rem;
     margin-bottom: 1rem;
-   
 }
 
-#meals .meal .content .text {
+.meals .meal .content .text {
     color:var(--lightColor);
     font-size: 1.125rem;
     width: 100%;
@@ -158,20 +165,20 @@ main {
     transition: 0.4s;
 }
 
-#meals .meal .content .text:not(:read-only) {
+.meals .meal .content .text:not(:read-only) {
     color: var(--violetDarkColor);
 }
 
-#meals .meal .actions {
+.meals .meal .actions {
     display: flex;
     margin: 0 -0.5rem;
 }
 
-#meals .meal {
+.meals .meal {
     -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   }
-#meals .meal:hover {
+.meals .meal:hover {
     -webkit-transition: var(--darkerColor);
     box-shadow: 0 0 40px 40px var(--grayColor) inset;
     padding: 1.125rem;
@@ -180,7 +187,7 @@ main {
 
 
 
-#meal .actions button {
+.meal .actions button {
     cursor: pointer;
     margin: 0 0.5rem;
     font-size: 1.125rem;
