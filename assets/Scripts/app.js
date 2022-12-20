@@ -52,6 +52,7 @@ const dinnerInput = document.getElementById("new-dinner-input");
 const snacksInput = document.getElementById("new-snacks-input");
 
 
+/// This is a better alternative to onClick functions inside html code
 const daySubmitButton = document.querySelector('#new-day-submit')
 daySubmitButton.addEventListener('click', getDaysData)
 
