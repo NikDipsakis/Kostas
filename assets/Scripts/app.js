@@ -109,13 +109,17 @@ const lunchInput = document.getElementById("new-lunch-input");
 const dinnerInput = document.getElementById("new-dinner-input");
 const snacksInput = document.getElementById("new-snacks-input");
 
-function getValue(input, foods) {
+function getValue(input, foods, meal) {
     const inputValue = input.value;
     const inputArray = inputValue.split(',');
     let calorieSum = 0;
     let proteinSum = 0;
     let carbSum = 0;
     let fatSum = 0;
+    if (input.value === '') {
+        alert('You must enter a food');
+        return;
+    }
     //console.log(inputValueArray);
     for (i = 0; i < foods.length; i++) {
         //console.log(foodDatabase[i].name);
@@ -129,22 +133,22 @@ function getValue(input, foods) {
             }
         }
     }
-    console.log(`Total of calories : ${calorieSum} \nTotal of Protein : ${proteinSum} \nTotal of Carbs : ${carbSum} \nTotal of Fat : ${fatSum}`)
+    console.log(`Total of calories of ${meal}: ${calorieSum} \nTotal of Protein : ${proteinSum} \nTotal of Carbs : ${carbSum} \nTotal of Fat : ${fatSum}`)
 }
 
 function getBreakfast() {
-    getValue(breakfastInput, foodDatabase);
+    getValue(breakfastInput, foodDatabase, 'Breakfast');
 };
 
 function getLunch() {
-    getValue(lunchInput, foodDatabase);
+    getValue(lunchInput, foodDatabase, 'Lunch');
 }
 
 function getDinner() {
-    getValue(dinnerInput, foodDatabase);
+    getValue(dinnerInput, foodDatabase, 'Dinner');
 }
 
 function getSnacks() {
-    getValue(snacksInput, foodDatabase);
+    getValue(snacksInput, foodDatabase, 'Snacks');
 }
 
