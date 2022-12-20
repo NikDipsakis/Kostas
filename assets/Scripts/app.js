@@ -1,4 +1,4 @@
-///ΑΣΚΗΣΗ 4
+
 const goal = { dayCalories: 2500, dayProtein: 120 }
 //console.log(goal.dayCalories)
 const foodDatabase = [
@@ -44,10 +44,6 @@ const foodDatabase = [
     }
 ]
 
-/// βαλε με το χέρι όσες ακόμα τροφές θες
-/// δεν χρειαζεται να φτιαξεις κλασεις σε αυτην την ασκηση
-
-///Α) βρες ποια τροφη έχεις τις περισσότερες θερμίδες
 function maxOfMacros(foods, macro) {
     let maxMacro = foods[0][macro];
 
@@ -61,10 +57,6 @@ function maxOfMacros(foods, macro) {
     console.log(`the Max ${macro}: ${maxMacro}`);
 };
 //maxOfMacros(foodDatabase, ['calories']);
-
-///Β) κάνε το ίδιο για protein,carbs,fat
-
-///Γ) ενας άνθρωπος έφαγε 
 
 const breakfast = [foodDatabase[0], foodDatabase[0]]
 const lunch = [foodDatabase[2], foodDatabase[1]]
@@ -87,7 +79,7 @@ const totalMacros = totalofMacro(allDay, ['calories']);
 
 
 function seeAnalytics(meal) {
-    console.log(`The User consumed ${totalofMacro(meal, ['calories'])} Calories, which contained:\nProtein: ${totalofMacro(meal, ['protein'])} grams\nCarbohydrates: ${totalofMacro(meal, ['carbs'])} grams\nFats: ${totalofMacro(meal, ['fat'])} grams`);
+    console.log(`The User consumed ${totalofMacro(meal, ['calories'])} Calories,\nwhich contained:\nProtein: ${totalofMacro(meal, ['protein'])} grams\nCarbohydrates: ${totalofMacro(meal, ['carbs'])} grams\nFats: ${totalofMacro(meal, ['fat'])} grams`);
 
     if (totalofMacro(meal, ['calories']) > goal.dayCalories) {
         console.log(`The User Exceeded the Calorie Intake`)
@@ -118,32 +110,32 @@ const dinnerInput = document.getElementById("new-dinner-input");
 const snacksInput = document.getElementById("new-snacks-input");
 
 
-function getValue(input) {
+function getValue(input , foods) {
     const inputValue = input.value;
     const inputArray = inputValue.split(',');
     //console.log(inputValueArray);
-    for (i = 0; i < foodDatabase.length; i++) {
+    for (i = 0; i < foods.length; i++) {
         //console.log(foodDatabase[i].name);
         for (j = 0; j < inputArray.length; j++) {
-            if (foodDatabase[i].name === inputArray[j]) {
-                console.log(`${foodDatabase[i].name} contains ${foodDatabase[i].protein} of protein`)
+            if (foods[i].name === inputArray[j]) {
+                console.log(`${foods[i].name} contains :\n${foodDatabase[i].calories} calories, \n${foodDatabase[i].protein} grams of Protein, \n${foodDatabase[i].carbs} grams of Carbs \nand ${foodDatabase[i].fat} grams of fat`)
             }
         }
     }
 }
  
 function getBreakfast() {
-    getValue(breakfastInput);
+    getValue(breakfastInput , foodDatabase);
 };
 
 function getLunch() {
-    getValue(lunchInput);
+    getValue(lunchInput , foodDatabase);
 }
 
 function getDinner() {
-    getValue(dinnerInput);
+    getValue(dinnerInput , foodDatabase);
 }
 
 function getSnacks(){
-    getValue(snacksInput);
+    getValue(snacksInput , foodDatabase);
 }
