@@ -44,70 +44,17 @@ const foodDatabase = [
     }
 ]
 
-function maxOfMacros(foods, macro) {
-    let maxMacro = foods[0][macro];
 
-    for (i = 0; i < foods.length; i++) {
-        if (maxMacro < foods[i][macro]) {
-
-            maxMacro = foods[i][macro];
-        }
-
-    }
-    console.log(`the Max ${macro}: ${maxMacro}`);
-};
-//maxOfMacros(foodDatabase, ['calories']);
-
-const breakfast = [foodDatabase[0], foodDatabase[0]]
-const lunch = [foodDatabase[2], foodDatabase[1]]
-const dinner = [foodDatabase[4], foodDatabase[3]]
-
-const allDay = [...breakfast, ...lunch, ...dinner] // διαβασε τι κανει το ...
-//console.log(...allDay) /// δες τι τυπωνει εδω
-//console.log(...breakfast)
-
-function totalofMacro(meal, macro) {
-    let macroSum = 0;
-    for (i = 0; i < meal.length; i++) {
-        macroSum += meal[i][macro];
-    };
-    return macroSum;
-};
-const totalMacros = totalofMacro(allDay, ['calories']);
-//console.log(totalMacros);
-
-
-
-function seeAnalytics(meal) {
-    console.log(`The User consumed ${totalofMacro(meal, ['calories'])} Calories,\nwhich contained:\nProtein: ${totalofMacro(meal, ['protein'])} grams\nCarbohydrates: ${totalofMacro(meal, ['carbs'])} grams\nFats: ${totalofMacro(meal, ['fat'])} grams`);
-
-    if (totalofMacro(meal, ['calories']) > goal.dayCalories) {
-        console.log(`The User Exceeded the Calorie Intake`)
-    } else {
-        console.log(`${goal.dayCalories - totalofMacro(meal, ['calories'])} Calories remain to reach Daily Goal`);
-    };
-};
-
-//seeAnalytics(allDay);
-
-function callByName(foodList, searchName) {
-    for (i = 0; i < foodList.length; i++) {
-        //console.log(foodList[i].name)
-        if (foodList[i].name === searchName) {
-            console.log(foodList[i]);
-            return
-        } else {
-            console.log(`${searchName} is not registered in this Food List`);
-            return
-        }
-    }
-}
-//callByName(foodDatabase, 'egg');
 
 const breakfastInput = document.getElementById("new-breakfast-input");
 const lunchInput = document.getElementById("new-lunch-input");
 const dinnerInput = document.getElementById("new-dinner-input");
 const snacksInput = document.getElementById("new-snacks-input");
+
+
+const daySubmitButton = document.querySelector('#new-day-submit')
+daySubmitButton.addEventListener('click', getDaysData)
+
 
 function getValue(input, foods, meal) {
     const inputValue = input.value;
@@ -117,7 +64,7 @@ function getValue(input, foods, meal) {
     let carbSum = 0;
     let fatSum = 0;
     if (input.value === '') {
-        alert('You must enter a food');
+        console.log('You must enter a food');
         return;
     }
     //console.log(inputValueArray);
@@ -133,22 +80,38 @@ function getValue(input, foods, meal) {
             }
         }
     }
-    console.log(`Total of calories of ${meal}: ${calorieSum} \nTotal of Protein : ${proteinSum} \nTotal of Carbs : ${carbSum} \nTotal of Fat : ${fatSum}`)
+    return {
+        meal: meal,
+        calories: calorieSum,
+        protein: proteinSum,
+        carbs: carbSum,
+        fat: fatSum,
+    }
 }
 
-function getBreakfast() {
-    getValue(breakfastInput, foodDatabase, 'Breakfast');
-};
+// function getBreakfast() {
+//     getValue(breakfastInput, foodDatabase, 'Breakfast');
+// };
 
-function getLunch() {
-    getValue(lunchInput, foodDatabase, 'Lunch');
-}
+// function getLunch() {
+//     getValue(lunchInput, foodDatabase, 'Lunch');
+// }
 
-function getDinner() {
-    getValue(dinnerInput, foodDatabase, 'Dinner');
-}
+// function getDinner() {
+//     getValue(dinnerInput, foodDatabase, 'Dinner');
+// }
 
-function getSnacks() {
-    getValue(snacksInput, foodDatabase, 'Snacks');
+// function getSnacks() {
+//     getValue(snacksInput, foodDatabase, 'Snacks');
+// }
+
+function getDaysData() {
+    const daysObj = {
+        breakfast: getValue(breakfastInput, foodDatabase, 'Breakfast'),
+        lunch: getValue(lunchInput, foodDatabase, 'Lunch'),
+        dinner: getValue(dinnerInput, foodDatabase, 'Dinner'),
+        snacks: getValue(snacksInput, foodDatabase, 'Snacks'),
+    }
+    console.log(daysObj)
 }
 
