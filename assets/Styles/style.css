@@ -83,7 +83,7 @@ input, button {
     background: none;
 }
 
-#new-meal-input {
+.new-meal-input {
    flex: 1 1 0%; 
    background-color: var(--darkerColor);
    padding: 1rem;
@@ -93,7 +93,7 @@ input, button {
    font-size: 1.25rem;
 }
 
-#new-meal-input::placeholder {
+.new-meal-input::placeholder {
     color: var(--grayColor);
 }
 

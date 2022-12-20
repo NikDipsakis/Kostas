@@ -25,46 +25,17 @@
         <input
           type="text"
           name="new-meal-input"
-          id="new-meal-input"
+          id="new-breakfast-input"
+          class="new-meal-input"
           placeholder="BreakFast"
         />
-        <input type="submit" onclick ="textFieldInput()" id="new-meal-submit" value="Add" />
+        <input
+          type="button"
+          onclick="getBreakfast()"
+          id="new-meal-submit"
+          value="ADD"
+        />
       </form>
-    </header>
-    <header>
-        <form id="new-meal-form">
-          <input
-            type="text"
-            name="new-meal-input"
-            id="new-meal-input"
-            placeholder="Lunch"
-          />
-          <input type="submit" id="new-meal-submit" value="Add" />
-        </form>
-      </header>
-      <header>
-        <form id="new-meal-form">
-          <input
-            type="text"
-            name="new-meal-input"
-            id="new-meal-input"
-            placeholder="Dinner"
-          />
-          <input type="submit" id="new-meal-submit" value="Add" />
-        </form>
-      </header>
-      <header>
-        <form id="new-meal-form">
-          <input
-            type="text"
-            name="new-meal-input"
-            id="new-meal-input"
-            placeholder="Snacks"
-          />
-          <input type="submit" id="new-meal-submit" value="Add" />
-        </form>
-      </header>
-    <main>
       <section class="meal-list">
         <h2>Meals</h2>
 
@@ -84,7 +55,116 @@
 				</div> -->
         </div>
       </section>
-    </main>
+    </header>
+    <header>
+      <form id="new-meal-form">
+        <input
+          type="text"
+          name="new-meal-input"
+          id="new-lunch-input"
+          class="new-meal-input"
+          placeholder="Lunch"
+        />
+        <input
+          type="button"
+          onclick="getLunch()"
+          id="new-meal-submit"
+          value="ADD"
+        />
+      </form>
+      <section class="meal-list">
+        <h2>Meals</h2>
+
+        <div id="meals">
+          <!-- <div class="meal">
+                        <div class="content">
+                            <input 
+                                type="text" 
+                                class="text" 
+                                value="A new meal"
+                                readonly>
+                        </div>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div> -->
+        </div>
+      </section>
+    </header>
+    <header>
+      <form id="new-meal-form">
+        <input
+          type="text"
+          name="new-meal-input"
+          id="new-dinner-input"
+          class="new-meal-input"
+          placeholder="Dinner"
+        />
+        <input
+          type="button"
+          onclick="getDinner()"
+          id="new-meal-submit"
+          value="ADD"
+        />
+      </form>
+      <section class="meal-list">
+        <h2>Meals</h2>
+
+        <div id="meals">
+          <!-- <div class="meal">
+                        <div class="content">
+                            <input 
+                                type="text" 
+                                class="text" 
+                                value="A new meal"
+                                readonly>
+                        </div>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div> -->
+        </div>
+      </section>
+    </header>
+    <header>
+      <form id="new-meal-form">
+        <input
+          type="text"
+          name="new-meal-input"
+          id="new-snacks-input"
+          class="new-meal-input"
+          placeholder="Snacks"
+        />
+        <input
+          type="button"
+          onclick="getSnacks()"
+          id="new-meal-submit"
+          value="ADD"
+        />
+      </form>
+      <section class="meal-list">
+        <h2>Meals</h2>
+
+        <div id="meals">
+          <!-- <div class="meal">
+                        <div class="content">
+                            <input 
+                                type="text" 
+                                class="text" 
+                                value="A new meal"
+                                readonly>
+                        </div>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div> -->
+        </div>
+      </section>
+    </header>
+    <main></main>
     <script src="assets/Scripts/DarkMode.js"></script>
     <script src="assets/Scripts/app.js"></script>
   </body>

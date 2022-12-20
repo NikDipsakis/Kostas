@@ -60,7 +60,7 @@ function maxOfMacros(foods, macro) {
     }
     console.log(`the Max ${macro}: ${maxMacro}`);
 };
-maxOfMacros(foodDatabase , ['calories']);
+//maxOfMacros(foodDatabase, ['calories']);
 
 ///Β) κάνε το ίδιο για protein,carbs,fat
 
@@ -81,8 +81,8 @@ function totalofMacro(meal, macro) {
     };
     return macroSum;
 };
-const totalMacros = totalofMacro(allDay , ['calories']);
-console.log(totalMacros);
+const totalMacros = totalofMacro(allDay, ['calories']);
+//console.log(totalMacros);
 
 
 
@@ -96,18 +96,54 @@ function seeAnalytics(meal) {
     };
 };
 
-seeAnalytics(allDay);
+//seeAnalytics(allDay);
 
-function callByName(foodList , searchName) {
-    for (i = 0; i < foodList.length; i++){
+function callByName(foodList, searchName) {
+    for (i = 0; i < foodList.length; i++) {
         //console.log(foodList[i].name)
-        if (foodList[i].name === searchName){
+        if (foodList[i].name === searchName) {
             console.log(foodList[i]);
             return
-        }else{
+        } else {
             console.log(`${searchName} is not registered in this Food List`);
             return
         }
     }
 }
-callByName(foodDatabase , 'egg');
+//callByName(foodDatabase, 'egg');
+
+const breakfastInput = document.getElementById("new-breakfast-input");
+const lunchInput = document.getElementById("new-lunch-input");
+const dinnerInput = document.getElementById("new-dinner-input");
+const snacksInput = document.getElementById("new-snacks-input");
+
+
+function getValue(input) {
+    const inputValue = input.value;
+    const inputArray = inputValue.split(',');
+    //console.log(inputValueArray);
+    for (i = 0; i < foodDatabase.length; i++) {
+        //console.log(foodDatabase[i].name);
+        for (j = 0; j < inputArray.length; j++) {
+            if (foodDatabase[i].name === inputArray[j]) {
+                console.log(`${foodDatabase[i].name} contains ${foodDatabase[i].protein} of protein`)
+            }
+        }
+    }
+}
+ 
+function getBreakfast() {
+    getValue(breakfastInput);
+};
+
+function getLunch() {
+    getValue(lunchInput);
+}
+
+function getDinner() {
+    getValue(dinnerInput);
+}
+
+function getSnacks(){
+    getValue(snacksInput);
+}
