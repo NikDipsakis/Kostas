@@ -21,6 +21,7 @@
     />
     <header>
       <h1>MealPlan</h1>
+      <input type="button" id="new-day-submit" value="Submit" />
       <form id="new-meal-form">
         <input
           type="text"
@@ -29,34 +30,13 @@
           class="new-meal-input"
           placeholder="BreakFast"
         />
-        <input
+        <!-- <input
           type="button"
-          onclick="getBreakfast()"
-          id="new-meal-submit"
+          id="new-dinner-submit"
+          class="new-meal-submit"
           value="ADD"
-        />
+        />-->
       </form>
-      <section class="meal-list">
-        <h2>Food</h2>
-
-        <div id="meals" class="meals">
-          <!-- <div class="meal">
-					<div class="content">
-						<input 
-							type="text" 
-							class="text" 
-							value="A new meal"
-							readonly>
-					</div>
-					<div class="actions">
-						<button class="edit">Edit</button>
-						<button class="delete">Delete</button>
-					</div>
-				</div> -->
-        </div>
-      </section>
-    </header>
-    <header>
       <form id="new-meal-form">
         <input
           type="text"
@@ -65,31 +45,57 @@
           class="new-meal-input"
           placeholder="Lunch"
         />
-        <input
+        <!-- <input
           type="button"
-          onclick="getLunch()"
-          id="new-meal-submit"
+          id="new-dinner-submit"
+          class="new-meal-submit"
           value="ADD"
+        />-->
+      </form>
+      <form id="new-meal-form">
+        <input
+          type="text"
+          name="new-meal-input"
+          id="new-dinner-input"
+          class="new-meal-input"
+          placeholder="Dinner"
         />
+        <!-- <input
+          type="button"
+          id="new-dinner-submit"
+          class="new-meal-submit"
+          value="ADD"
+        />-->
+      </form>
+      <form id="new-meal-form">
+        <input
+          type="text"
+          name="new-meal-input"
+          id="new-snacks-input"
+          class="new-meal-input"
+          placeholder="Snacks"
+        />
+       <!-- <input
+          type="button"
+          id="new-dinner-submit"
+          class="new-meal-submit"
+          value="ADD"
+        />-->
       </form>
       <section class="meal-list">
-        <h2>Food</h2>
 
-        <div id="meals" class="meals">
-          <!-- <div class="meal">
-                        <div class="content">
-                            <input 
-                                type="text" 
-                                class="text" 
-                                value="A new meal"
-                                readonly>
-                        </div>
-                        <div class="actions">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </div> -->
-        </div>
+      <table class="meals">
+        <tr class="meal-list">
+          <th class="content" id="break-name"></th>
+          <th class="content" id="lunch-name"></th>
+          <th class="content" id="dinner-name"></th>
+          <th class="content" id="snacks-name"></th>
+        </tr>
+      </table>
+    </header>
+    <header>
+     
+        <h2>Food</h2>
       </section>
     </header>
     <header>
@@ -101,12 +107,12 @@
           class="new-meal-input"
           placeholder="Dinner"
         />
-        <input
+       <!-- <input
           type="button"
-          onclick="getDinner()"
-          id="new-meal-submit"
+          id="new-dinner-submit"
+          class="new-meal-submit"
           value="ADD"
-        />
+        />-->
       </form>
       <section class="meal-list">
         <h2>Food</h2>
@@ -139,15 +145,15 @@
         />
         <input
           type="button"
-          onclick="getSnacks()"
-          id="new-meal-submit"
+          id="new-snacks-submit"
+          class="new-meal-submit"
           value="ADD"
         />
       </form>
       <section class="meal-list">
         <h2>Food</h2>
 
-      <!--<div id="meals" class="meals">
+        <!--<div id="meals" class="meals">
           <div class="meal">
                         <div class="content">
                             <input 

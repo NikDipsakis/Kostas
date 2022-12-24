@@ -104,10 +104,21 @@ function callByName(foodList, searchName) {
 }
 //callByName(foodDatabase, 'egg');
 
+
 const breakfastInput = document.getElementById("new-breakfast-input");
 const lunchInput = document.getElementById("new-lunch-input");
 const dinnerInput = document.getElementById("new-dinner-input");
 const snacksInput = document.getElementById("new-snacks-input");
+const breakfastBtn = document.getElementById("new-breakfast-submit");
+const lunchBtn = document.getElementById("new-lunch-submit");
+const dinnerBtn = document.getElementById("new-dinner-submit");
+const snacksBtn = document.getElementById("new-snacks-submit");
+
+
+/// This is a better alternative to onClick functions inside html code
+const daySubmitButton = document.querySelector('#new-day-submit')
+daySubmitButton.addEventListener('click', getDaysData)
+
 
 function getValue(input, foods, meal) {
     const inputValue = input.value;
@@ -116,8 +127,8 @@ function getValue(input, foods, meal) {
     let proteinSum = 0;
     let carbSum = 0;
     let fatSum = 0;
-    if (input.value === '') {
-        alert('You must enter a food');
+    if (inputValue === '') {
+        console.log('You must enter a food');
         return;
     }
     //console.log(inputValueArray);
@@ -133,22 +144,54 @@ function getValue(input, foods, meal) {
             }
         }
     }
-    console.log(`Total of calories of ${meal}: ${calorieSum} \nTotal of Protein : ${proteinSum} \nTotal of Carbs : ${carbSum} \nTotal of Fat : ${fatSum}`)
+    return {
+        meal: meal,
+        calories: calorieSum,
+        protein: proteinSum,
+        carbs: carbSum,
+        fat: fatSum,
+    }
 }
 
-function getBreakfast() {
-    getValue(breakfastInput, foodDatabase, 'Breakfast');
-};
+// function getBreakfast() {
+//     getValue(breakfastInput, foodDatabase, 'Breakfast');
+// };
 
-function getLunch() {
-    getValue(lunchInput, foodDatabase, 'Lunch');
+// function getLunch() {
+//     getValue(lunchInput, foodDatabase, 'Lunch');
+// }
+
+// function getDinner() {
+//     getValue(dinnerInput, foodDatabase, 'Dinner');
+// }
+
+// function getSnacks() {
+//     getValue(snacksInput, foodDatabase, 'Snacks');
+// }
+const breakTable = document.getElementById("break-name");
+const lunchTable = document.getElementById("lunch-name");
+const dinnerTable = document.getElementById("dinner-name");
+const snacksTable = document.getElementById("snacks-name");
+function getDaysData() {
+    const daysObj = {
+        breakfast: getValue(breakfastInput, foodDatabase, 'Breakfast'),
+        lunch: getValue(lunchInput, foodDatabase, 'Lunch'),
+        dinner: getValue(dinnerInput, foodDatabase, 'Dinner'),
+        snacks: getValue(snacksInput, foodDatabase, 'Snacks'),
+    }
+    console.log(daysObj)
+    breakTable.innerHTML = daysObj.breakfast.meal
+    lunchTable.innerHTML = daysObj.lunch.meal
+    dinnerTable.innerHTML = daysObj.dinner.meal
+    snacksTable.innerHTML = daysObj.snacks.meal
+    console.log(daysObj.breakfast);
 }
 
-function getDinner() {
-    getValue(dinnerInput, foodDatabase, 'Dinner');
-}
 
-function getSnacks() {
-    getValue(snacksInput, foodDatabase, 'Snacks');
-}
 
+
+
+breakfastBtn.addEventListener('click', getDaysData);
+lunchBtn.addEventListener('click', getDaysData);
+dinnerBtn.addEventListener('click', getDaysData);
+snacksBtn.addEventListener('click', getDaysData);
