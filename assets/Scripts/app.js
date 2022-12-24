@@ -44,38 +44,6 @@ const foodDatabase = [
     }
 ]
 
-function maxOfMacros(foods, macro) {
-    let maxMacro = foods[0][macro];
-
-    for (i = 0; i < foods.length; i++) {
-        if (maxMacro < foods[i][macro]) {
-
-            maxMacro = foods[i][macro];
-        }
-
-    }
-    console.log(`the Max ${macro}: ${maxMacro}`);
-};
-//maxOfMacros(foodDatabase, ['calories']);
-
-const breakfast = [foodDatabase[0], foodDatabase[0]]
-const lunch = [foodDatabase[2], foodDatabase[1]]
-const dinner = [foodDatabase[4], foodDatabase[3]]
-
-const allDay = [...breakfast, ...lunch, ...dinner] // διαβασε τι κανει το ...
-//console.log(...allDay) /// δες τι τυπωνει εδω
-//console.log(...breakfast)
-
-function totalofMacro(meal, macro) {
-    let macroSum = 0;
-    for (i = 0; i < meal.length; i++) {
-        macroSum += meal[i][macro];
-    };
-    return macroSum;
-};
-const totalMacros = totalofMacro(allDay, ['calories']);
-//console.log(totalMacros);
-
 
 
 function seeAnalytics(meal) {
@@ -143,6 +111,13 @@ function getValue(input, foods, meal) {
                 //console.log(`${foods[i].name} contains :\n${foods[i].calories} calories, \n${foods[i].protein} grams of Protein, \n${foods[i].carbs} grams of Carbs \nand ${foods[i].fat} grams of fat`)
             }
         }
+    }
+    return {
+        meal: meal,
+        calories: calorieSum,
+        protein: proteinSum,
+        carbs: carbSum,
+        fat: fatSum,
     }
     return {
         meal: meal,
