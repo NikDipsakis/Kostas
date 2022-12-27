@@ -139,6 +139,10 @@ const snacksCaloriesImport = document.getElementById("snacks-calories");
 const snacksProteinImport = document.getElementById("snacks-protein");
 const snacksCarbsImport = document.getElementById("snacks-carbs");
 const snacksFatImport = document.getElementById("snacks-fat");
+const totalCaloriesImport = document.getElementById("total-calories");
+const totalProteinImport = document.getElementById("total-protein");
+const totalCarbsImport = document.getElementById("total-carbs");
+const totalFatImport = document.getElementById("total-fat");
 
 // function getBreakfast() {
 //     getValue(breakfastInput, foodDatabase, 'Breakfast');
@@ -159,13 +163,19 @@ const snacksFatImport = document.getElementById("snacks-fat");
 
 //Displays all the macros on the Table: 
 function getDaysData() {
+    let totalCalories = 0;
+    let totalProtein = 0;
+    let totalCarbs = 0;
+    let totalFat = 0;
     const daysObj = {
         breakfast: getValue(breakfastInput, foodDatabase, 'Breakfast'),
         lunch: getValue(lunchInput, foodDatabase, 'Lunch'),
         dinner: getValue(dinnerInput, foodDatabase, 'Dinner'),
         snacks: getValue(snacksInput, foodDatabase, 'Snacks'),
     }
-    console.log(daysObj)
+    const totalArray = [daysObj.breakfast, daysObj.lunch, daysObj.dinner, daysObj.snacks]
+    
+    
     breakFastCaloriesImport.innerHTML = daysObj.breakfast.calories;
     breakFastProteinImport.innerHTML = daysObj.breakfast.protein;
     breakFastCarbsImport.innerHTML = daysObj.breakfast.carbs;
@@ -182,8 +192,19 @@ function getDaysData() {
     snacksProteinImport.innerHTML = daysObj.snacks.protein;
     snacksCarbsImport.innerHTML = daysObj.snacks.carbs;
     snacksFatImport.innerHTML = daysObj.snacks.fat;
-}
 
+    for (i = 0; i < totalArray.length; i++) {
+        totalCalories += totalArray[i].calories;
+        totalProtein += totalArray[i].protein;
+        totalCarbs += totalArray[i].carbs;
+        totalFat += totalArray[i].fat;
+    }
+
+    totalCaloriesImport.innerHTML = totalCalories;
+    totalProteinImport.innerHTML = totalProtein;
+    totalCarbsImport.innerHTML = totalCarbs;
+    totalFatImport.innerHTML = totalFat;
+}
 
 /// This is a better alternative to onClick functions inside html code
 const daySubmitButton = document.querySelector('#new-day-submit')
