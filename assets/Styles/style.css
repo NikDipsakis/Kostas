@@ -216,7 +216,7 @@ main {
 }
 
 #new-day-submit {
-  border-radius: 7px;
+  border-radius: 8px;
   height: 40px;
   width: 200px;
   background-color: var(--darkerColor);
@@ -244,7 +244,7 @@ main {
   margin: 25px 0px;
   font-size: 0.9em;
   min-width: 600px;
-  border-radius: 5px 5px 4px 4px;
+  border-radius: 8px 8px 4px 4px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   
