@@ -221,7 +221,7 @@ main {
   width: 200px;
   background-color: var(--darkerColor);
   font-size: 1.5rem;
-  color: white;
+  color: rgb(255, 255, 255);
   margin: 0.5rem;
   background-color: var(--violetDarkColor);
   -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
@@ -252,7 +252,7 @@ main {
 
 .content-table thead tr {
   background-color:var(--violetDarkColor);
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   text-align: left;
   font-weight: bold;
 }
@@ -263,11 +263,11 @@ main {
 }
 
 .content-table tbody tr {
-  border-bottom: 1px solid var(--darkerColor);
+  border-bottom: 1px solid var(--darkestColor);
 }
 
 .content-table tbody tr:nth-of-type(even) {
-  background-color: var(--darkerColor);
+  background-color: var(--darkestColor);
 }
 
 .content-table tbody tr:last-of-type {
