@@ -229,15 +229,10 @@ main {
 }
 
 #new-day-submit:hover {
-  background-image: linear-gradient(
-    to right,
-    var(--violetColor),
-    var(--violetDarkColor)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-color: rgb(255, 255, 255);
+  color: var(--violetDarkColor);
   cursor: pointer;
-  transition: 1s;
+  transition: 0.30s;
 }
 .content-table {
   border-collapse: collapse;
