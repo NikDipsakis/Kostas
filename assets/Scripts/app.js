@@ -77,10 +77,10 @@ const breakfastInput = document.getElementById("new-breakfast-input");
 const lunchInput = document.getElementById("new-lunch-input");
 const dinnerInput = document.getElementById("new-dinner-input");
 const snacksInput = document.getElementById("new-snacks-input");
-const breakfastBtn = document.getElementById("new-breakfast-submit");
-const lunchBtn = document.getElementById("new-lunch-submit");
-const dinnerBtn = document.getElementById("new-dinner-submit");
-const snacksBtn = document.getElementById("new-snacks-submit");
+//const breakfastBtn = document.getElementById("new-breakfast-submit");
+//const lunchBtn = document.getElementById("new-lunch-submit");
+//const dinnerBtn = document.getElementById("new-dinner-submit");
+//const snacksBtn = document.getElementById("new-snacks-submit");
 
 
 /// This is a better alternative to onClick functions inside html code
@@ -111,13 +111,6 @@ function getValue(input, foods, meal) {
                 //console.log(`${foods[i].name} contains :\n${foods[i].calories} calories, \n${foods[i].protein} grams of Protein, \n${foods[i].carbs} grams of Carbs \nand ${foods[i].fat} grams of fat`)
             }
         }
-    }
-    return {
-        meal: meal,
-        calories: calorieSum,
-        protein: proteinSum,
-        carbs: carbSum,
-        fat: fatSum,
     }
     return {
         meal: meal,
@@ -163,10 +156,7 @@ function getDaysData() {
 }
 
 
-
-
-
-breakfastBtn.addEventListener('click', getDaysData);
-lunchBtn.addEventListener('click', getDaysData);
-dinnerBtn.addEventListener('click', getDaysData);
-snacksBtn.addEventListener('click', getDaysData);
+//breakfastBtn.addEventListener('click', getDaysData);
+//lunchBtn.addEventListener('click', getDaysData);
+//dinnerBtn.addEventListener('click', getDaysData);
+//snacksBtn.addEventListener('click', getDaysData);

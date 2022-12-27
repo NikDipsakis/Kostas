@@ -221,7 +221,7 @@ main {
   width: 200px;
   background-color: var(--darkerColor);
   font-size: 1.5rem;
-  color: var(--lightColor);
+  color: white;
   margin: 0.5rem;
   background-color: var(--violetDarkColor);
   -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
@@ -239,40 +239,42 @@ main {
   cursor: pointer;
   transition: 1s;
 }
- table{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8rem;
-    font-weight: 300;
-    color: var(--grayColor);
-    margin-bottom: 1rem;
- }
- .meals .meal-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--grayColor);
-    padding: 1rem;
-    border-radius: 1rem;
-    margin: 1rem;
-  }
-
-  .meals .meal-list .content {
-    color: var(--lightColor);
-    font-size: 1.5rem;
-    width: 100%;
-    display: flex;
-    transition: 0.4s;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 600px;
+  border-radius: 5px 5px 4px 4px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   
-  .meals .meal-list #lunch-name  {
-    margin-left: 5rem;
-    margin-right: 3.5rem;
-  }
-  .meals .meal-list #dinner-name  {
-    margin-left: 3.5rem;
-    margin-right: 5rem;
-  }
+}
+
+.content-table thead tr {
+  background-color:var(--violetDarkColor);
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid var(--darkerColor);
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: var(--darkerColor);
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--violetDarkColor);
+}
+
+.content-table tbody tr.meal-row {
+  font-weight: bold;
+  color: var(--violetDarkColor);
+}
