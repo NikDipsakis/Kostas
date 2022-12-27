@@ -136,10 +136,24 @@ function getValue(input, foods, meal) {
 // function getSnacks() {
 //     getValue(snacksInput, foodDatabase, 'Snacks');
 // }
-const breakTable = document.getElementById("break-name");
-const lunchTable = document.getElementById("lunch-name");
-const dinnerTable = document.getElementById("dinner-name");
-const snacksTable = document.getElementById("snacks-name");
+const breakFastCaloriesImport = document.getElementById("breakfast-calories");
+const breakFastProteinImport = document.getElementById("breakfast-protein");
+const breakFastCarbsImport = document.getElementById("breakfast-carbs");
+const breakFastFatImport = document.getElementById("breakfast-fat");
+const lunchCaloriesImport = document.getElementById("lunch-calories");
+const lunchProteinImport = document.getElementById("lunch-protein");
+const lunchCarbsImport = document.getElementById("lunch-carbs");
+const lunchFatImport = document.getElementById("lunch-fat");
+const dinnerCaloriesImport = document.getElementById("dinner-calories");
+const dinnerProteinImport = document.getElementById("dinner-protein");
+const dinnerCarbsImport = document.getElementById("dinner-carbs");
+const dinnerFatImport = document.getElementById("dinner-fat");
+const snacksCaloriesImport = document.getElementById("snacks-calories");
+const snacksProteinImport = document.getElementById("snacks-protein");
+const snacksCarbsImport = document.getElementById("snacks-carbs");
+const snacksFatImport = document.getElementById("snacks-fat");
+
+
 function getDaysData() {
     const daysObj = {
         breakfast: getValue(breakfastInput, foodDatabase, 'Breakfast'),
@@ -148,13 +162,23 @@ function getDaysData() {
         snacks: getValue(snacksInput, foodDatabase, 'Snacks'),
     }
     console.log(daysObj)
-    breakTable.innerHTML = daysObj.breakfast.meal
-    lunchTable.innerHTML = daysObj.lunch.meal
-    dinnerTable.innerHTML = daysObj.dinner.meal
-    snacksTable.innerHTML = daysObj.snacks.meal
-    console.log(daysObj.breakfast);
+    breakFastCaloriesImport.innerHTML = daysObj.breakfast.calories;
+    breakFastProteinImport.innerHTML = daysObj.breakfast.protein;
+    breakFastCarbsImport.innerHTML = daysObj.breakfast.carbs;
+    breakFastFatImport.innerHTML = daysObj.breakfast.fat;
+    lunchCaloriesImport.innerHTML = daysObj.lunch.calories;
+    lunchProteinImport.innerHTML = daysObj.lunch.protein;
+    lunchCarbsImport.innerHTML = daysObj.lunch.carbs;
+    lunchFatImport.innerHTML = daysObj.lunch.fat;
+    dinnerCaloriesImport.innerHTML = daysObj.dinner.calories;
+    dinnerProteinImport.innerHTML = daysObj.dinner.protein;
+    dinnerCarbsImport.innerHTML = daysObj.dinner.carbs;
+    dinnerFatImport.innerHTML = daysObj.dinner.fat;
+    snacksCaloriesImport.innerHTML = daysObj.snacks.calories;
+    snacksProteinImport.innerHTML = daysObj.snacks.protein;
+    snacksCarbsImport.innerHTML = daysObj.snacks.carbs;
+    snacksFatImport.innerHTML = daysObj.snacks.fat;
 }
-
 
 //breakfastBtn.addEventListener('click', getDaysData);
 //lunchBtn.addEventListener('click', getDaysData);
