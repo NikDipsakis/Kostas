@@ -17,7 +17,7 @@
   /* Dark theme*/
   --darkColor: rgb(61, 61, 61);
   --darkerColor: rgb(39, 39, 39);
-  --darkestColor: rgb(32, 32, 32);
+  --darkestColor: rgb(36, 36, 36);
   --lightColor: rgb(168, 168, 168);
   --violetColor: rgb(195, 149, 255);
   --violetDarkColor: rgb(138, 75, 255);
@@ -237,11 +237,11 @@ main {
 .content-table {
   border-collapse: collapse;
   margin: 25px 0px;
-  font-size: 0.9em;
+  font-size: 1.2rem;
   min-width: 600px;
   border-radius: 8px 8px 4px 4px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 20px var(--darkerColor);
   
 }
 

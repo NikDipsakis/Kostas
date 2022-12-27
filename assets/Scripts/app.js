@@ -1,6 +1,8 @@
 
 const goal = { dayCalories: 2500, dayProtein: 120 }
 //console.log(goal.dayCalories)
+
+
 const foodDatabase = [
     {
         name: 'egg',
@@ -45,7 +47,7 @@ const foodDatabase = [
 ]
 
 
-
+//Shows you the analysis of the foods and checks if the daily goal was exceeded:
 function seeAnalytics(meal) {
     console.log(`The User consumed ${totalofMacro(meal, ['calories'])} Calories,\nwhich contained:\nProtein: ${totalofMacro(meal, ['protein'])} grams\nCarbohydrates: ${totalofMacro(meal, ['carbs'])} grams\nFats: ${totalofMacro(meal, ['fat'])} grams`);
 
@@ -55,9 +57,10 @@ function seeAnalytics(meal) {
         console.log(`${goal.dayCalories - totalofMacro(meal, ['calories'])} Calories remain to reach Daily Goal`);
     };
 };
-
 //seeAnalytics(allDay);
 
+
+//Searches a Food or several by name and gives you the exact macro count:
 function callByName(foodList, searchName) {
     for (i = 0; i < foodList.length; i++) {
         //console.log(foodList[i].name)
@@ -73,21 +76,7 @@ function callByName(foodList, searchName) {
 //callByName(foodDatabase, 'egg');
 
 
-const breakfastInput = document.getElementById("new-breakfast-input");
-const lunchInput = document.getElementById("new-lunch-input");
-const dinnerInput = document.getElementById("new-dinner-input");
-const snacksInput = document.getElementById("new-snacks-input");
-//const breakfastBtn = document.getElementById("new-breakfast-submit");
-//const lunchBtn = document.getElementById("new-lunch-submit");
-//const dinnerBtn = document.getElementById("new-dinner-submit");
-//const snacksBtn = document.getElementById("new-snacks-submit");
-
-
-/// This is a better alternative to onClick functions inside html code
-const daySubmitButton = document.querySelector('#new-day-submit')
-daySubmitButton.addEventListener('click', getDaysData)
-
-
+//Gets the value from foods that the user dialed:
 function getValue(input, foods, meal) {
     const inputValue = input.value;
     const inputArray = inputValue.split(',');
@@ -121,21 +110,19 @@ function getValue(input, foods, meal) {
     }
 }
 
-// function getBreakfast() {
-//     getValue(breakfastInput, foodDatabase, 'Breakfast');
-// };
 
-// function getLunch() {
-//     getValue(lunchInput, foodDatabase, 'Lunch');
-// }
 
-// function getDinner() {
-//     getValue(dinnerInput, foodDatabase, 'Dinner');
-// }
+//variables that get value of a food:
+const breakfastInput = document.getElementById("new-breakfast-input");
+const lunchInput = document.getElementById("new-lunch-input");
+const dinnerInput = document.getElementById("new-dinner-input");
+const snacksInput = document.getElementById("new-snacks-input");
+//const breakfastBtn = document.getElementById("new-breakfast-submit");
+//const lunchBtn = document.getElementById("new-lunch-submit");
+//const dinnerBtn = document.getElementById("new-dinner-submit");
+//const snacksBtn = document.getElementById("new-snacks-submit");
 
-// function getSnacks() {
-//     getValue(snacksInput, foodDatabase, 'Snacks');
-// }
+// Macro imports from dialed foods:
 const breakFastCaloriesImport = document.getElementById("breakfast-calories");
 const breakFastProteinImport = document.getElementById("breakfast-protein");
 const breakFastCarbsImport = document.getElementById("breakfast-carbs");
@@ -153,7 +140,24 @@ const snacksProteinImport = document.getElementById("snacks-protein");
 const snacksCarbsImport = document.getElementById("snacks-carbs");
 const snacksFatImport = document.getElementById("snacks-fat");
 
+// function getBreakfast() {
+//     getValue(breakfastInput, foodDatabase, 'Breakfast');
+// };
 
+// function getLunch() {
+//     getValue(lunchInput, foodDatabase, 'Lunch');
+// }
+
+// function getDinner() {
+//     getValue(dinnerInput, foodDatabase, 'Dinner');
+// }
+
+// function getSnacks() {
+//     getValue(snacksInput, foodDatabase, 'Snacks');
+// }
+
+
+//Displays all the macros on the Table: 
 function getDaysData() {
     const daysObj = {
         breakfast: getValue(breakfastInput, foodDatabase, 'Breakfast'),
@@ -179,6 +183,11 @@ function getDaysData() {
     snacksCarbsImport.innerHTML = daysObj.snacks.carbs;
     snacksFatImport.innerHTML = daysObj.snacks.fat;
 }
+
+
+/// This is a better alternative to onClick functions inside html code
+const daySubmitButton = document.querySelector('#new-day-submit')
+daySubmitButton.addEventListener('click', getDaysData)
 
 //breakfastBtn.addEventListener('click', getDaysData);
 //lunchBtn.addEventListener('click', getDaysData);
