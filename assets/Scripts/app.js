@@ -2,7 +2,7 @@
 const goal = { dayCalories: 2500, dayProtein: 120 }
 //console.log(goal.dayCalories)
 
-
+const foodObj = {}
 const foodDatabase = [
     {
         name: 'egg',
@@ -45,6 +45,10 @@ const foodDatabase = [
         weight: 300
     }
 ]
+for (let i = 0; i < foodDatabase.length; i++) {
+    foodObj[foodDatabase[i].name] = foodDatabase[i]
+}
+//console.log(foodObj);
 
 
 //Shows you the analysis of the foods and checks if the daily goal was exceeded:
@@ -174,8 +178,8 @@ function getDaysData() {
         snacks: getValue(snacksInput, foodDatabase, 'Snacks'),
     }
     const totalArray = [daysObj.breakfast, daysObj.lunch, daysObj.dinner, daysObj.snacks]
-    
-    
+
+
     breakFastCaloriesImport.innerHTML = daysObj.breakfast.calories;
     breakFastProteinImport.innerHTML = daysObj.breakfast.protein;
     breakFastCarbsImport.innerHTML = daysObj.breakfast.carbs;
